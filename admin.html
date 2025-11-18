@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Restrita - Login</title>
+    <style>
+        /* Reutiliza alguns estilos do index.html e adiciona específicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #28a745; 
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none; 
+        }
+        .admin-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .login-box, .admin-panel {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-button {
+            width: 100%;
+            background-color: #dc3545;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Estilos do Painel Admin (Simulação após login) */
+        .admin-panel {
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+        }
+        .admin-panel h2 {
+            text-align: center;
+            color: #1e7e34;
+        }
+        .event-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        .event-item button {
+            background-color: #ffc107; /* Amarelo para editar */
+            color: #333;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="header-button">💚 Circuito Saquarema Verde</a>
+        </header>
+
+    <div class="admin-container">
+        <div class="login-box" id="loginForm">
+            <h2>🔐 Login de Administrador</h2>
+            <form onsubmit="event.preventDefault(); showAdminPanel();">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit" class="login-button">Entrar</button>
+<p style="font-size: 0.75em; color: #6c757d; margin-top: 15px;">
+    * A versão completa implementará criptografia de senha (Bcrypt) e comunicação via HTTPS para garantir a segurança dos dados.
+</p>
+            </form>
+        </div>
+
+        <div class="admin-panel" id="adminPanel" style="display: none;">
+            <h2>🛠️ Painel de Administração</h2>
+            <p>Aqui o administrador pode **alterar a disponibilidade de horários** e **incluir atualizações**.</p>
+            
+            <h3>Gestão de Eventos</h3>
+
+            <div class="event-item">
+                <h4>Trilha Guiada na Restinga (25/11/2025)</h4>
+                <p>Status: **Disponível**</p>
+                <p>Horários atuais: 08:00 | 10:30 | 14:00</p>
+                <button onclick="alert('Funcionalidade de Alteração de Horário (Requer Backend)');">Alterar Horários</button>
+            </div>
+
+            <div class="event-item">
+                <h4>Observação de Aves (02/12/2025)</h4>
+                <p>Status: **Lotado**</p>
+                <p>Horários atuais: 07:00</p>
+                <button onclick="alert('Funcionalidade de Alteração de Horário (Requer Backend)');">Alterar Horários</button>
+            </div>
+
+            <h3>Incluir Atualização/Notícia</h3>
+            <textarea style="width: 100%; height: 100px; margin-top: 10px;" placeholder="Digite a nova atualização..."></textarea>
+            <button class="login-button" style="background-color: #17a2b8; margin-top: 10px;" onclick="alert('Funcionalidade de Inclusão de Atualização (Requer Backend)');">Publicar Atualização</button>
+
+        </div>
+    </div>
+
+    <script>
+        function showAdminPanel() {
+            // Em um MVP sem backend, apenas simula que o login foi bem-sucedido
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('adminPanel').style.display = 'block';
+            
+            // Simulação de configurações de Administrador:
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            
+            // Exemplo de Admin configurado (SEM SEGURANÇA)
+            if (user === "admin" && pass === "senha123") {
+                console.log("Login de administrador bem-sucedido (SIMULADO)!");
+            } else {
+                 console.log("Login de administrador (SIMULADO)!");
+            }
+        }
+    </script>
+
+</body>
+</html>
