@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circuito Saquarema Verde</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #2e7d32;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60') no-repeat center/cover;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 1px 1px 4px black;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .admin-btn {
+            background: #1b5e20;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .admin-btn:hover {
+            background: #145017;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">CIRCUITO SAQUAREMA VERDE</a>
+        </div>
+
+        <nav>
+            <a href="#trilhas">Trilhas</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#sobre">Sobre</a>
+            <button class="admin-btn" onclick="location.href='admin-login.html'">Login Administrador</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        Explore as belezas naturais de Saquarema
+    </section>
+
+    <div class="container">
+        <div class="card" id="trilhas">
+            <h2>🌿 Trilhas</h2>
+            <p>Conheça as trilhas do Parque Estadual da Costa do Sol e da Reserva de Jacarepiá.</p>
+        </div>
+
+        <div class="card" id="eventos">
+            <h2>📅 Eventos</h2>
+            <p>Veja eventos ambientais, mutirões, atividades e temporadas especiais.</p>
+        </div>
+
+        <div class="card" id="sobre">
+            <h2>ℹ️ Sobre o Projeto</h2>
+            <p>O Circuito Saquarema Verde foi criado para facilitar o acesso a informações sobre turismo sustentável.</p>
+        </div>
+    </div>
+
+</body>
+</html>
