@@ -13,6 +13,8 @@
         :root {
             --verde-principal: #28a745; /* Verde do Circuito */
             --verde-escuro: #1e7e34;
+            --laranja-destaque: #ff7f00; /* Cor Laranja */
+            --laranja-escuro: #cc6600;  /* Cor Laranja Escuro para Hover */
             --azul-acao: #007bff;
             --vermelho-restrito: #dc3545;
             --cinza-claro: #f8f9fa;
@@ -134,13 +136,13 @@
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/img1.jpg') no-repeat center center/cover; 
             color: var(--branco);
-            text-align: left; /* CORRIGIDO: Volta a alinhar o texto à esquerda */ 
-            padding: 100px 40px;
-            min-height: 400px;
+            text-align: left; 
+            padding: 80px 40px; 
+            min-height: 350px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start; /* CORRIGIDO: Volta a alinhar os itens flexíveis à esquerda */ 
+            align-items: flex-start; 
         }
 
         .hero-section h1 {
@@ -151,40 +153,74 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             max-width: 600px; 
             line-height: 1.1;
-            margin-left: 0; /* CORRIGIDO: Remove a margem automática para voltar à esquerda */
+            margin-left: 0; 
         }
 
         .hero-section p {
-            font-size: 1.4em; 
-            max-width: 600px; 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.3em; 
+            font-weight: 700; 
+            max-width: 650px; 
             margin-bottom: 30px; 
-            margin-left: 0; /* CORRIGIDO: Remove a margem automática para voltar à esquerda */
+            margin-left: 0; 
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); 
         }
         
         /* Estilo para o Botão de Novidades na Hero Section */
         .hero-button {
-            /* Estilo Base: Transparente com Borda Verde e Texto Branco */
-            background-color: transparent;
+            background-image: url('img/novidades.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-color: transparent; 
             color: var(--branco); 
             border: 2px solid var(--verde-principal); 
-            padding: 15px 30px;
+            padding: 18px 35px; 
             border-radius: 50px; 
-            font-size: 1.1em;
+            font-size: 1.25em; 
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
             transition: all 0.4s ease; 
             display: inline-block; 
-            margin-left: auto; /* NOVO: Empurra o botão para a direita */
+            margin-left: auto; 
+            position: relative; 
+            overflow: hidden; 
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); 
+        }
+
+        /* Adicionando um overlay para o botão para melhorar a legibilidade do texto sobre a imagem */
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
+            border-radius: 50px; 
+            z-index: 1;
+            transition: background 0.4s ease;
+        }
+
+        /* O texto do botão voltou a ser branco */
+        .hero-button span {
+            position: relative;
+            z-index: 2;
+            color: var(--branco); /* ALTERADO: Cor do texto voltou a ser branca */
+            font-weight: 700; /* Voltando para o peso original (700) */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Revertendo a sombra do texto para a original (menos intensa) */
+        }
+
+        .hero-button:hover::before {
+            background: rgba(0, 0, 0, 0.2); 
         }
 
         .hero-button:hover {
-            /* Estilo Hover: Inverte as cores */
-            background-color: var(--verde-principal); 
+            background-color: transparent; 
             color: var(--branco); 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4); 
+            transform: translateY(-4px) scale(1.02); 
+            box-shadow: 0 8px 25px rgba(255, 127, 0, 0.9); /* A sombra de hover ainda será laranja para um contraste vibrante */
             text-decoration: none;
         }
         
@@ -446,22 +482,24 @@
             }
 
             .hero-section {
-                padding: 60px 20px; 
+                padding: 40px 20px; 
+                min-height: 300px; 
                 align-items: center; 
                 text-align: center;
             }
             .hero-section h1 {
                  margin-left: 0; 
-                font-size: 2.8em; 
+                font-size: 2.5em; 
             }
             .hero-section p {
                 margin-left: 0; 
-                font-size: 1.2em;
+                font-size: 1.1em; 
+                font-weight: 700;
             }
             
             .hero-button {
-                padding: 12px 25px; 
-                font-size: 1em;
+                padding: 16px 30px; 
+                font-size: 1.1em; 
                 margin-left: auto; 
                 margin-right: auto; 
                 display: block; 
@@ -506,7 +544,7 @@
     <header>
         <a href="index.html" class="header-logo">
             <svg class="leaf-icon" viewBox="0 0 24 24">
-                <path d="M17 8c-1.66-1.66-4.66-2.02-7-.75C8.34 8.79 7 11.5 7 14c0 3 2 6 6 6s6-3 6-6c0-2.5-1.34-5.21-3-7zM8 12c.5-1.5 1.5-2.5 3-3 .75-.38 1.5-.75 2.25-1.13.75-.38 1.5-.75 2.25-1.13.75-.38 1.5-.75 2.25-1.13C16 4 14 2 12 2S8 4 8 8c0 2.5 1.34-5.21 3 7 .75.38 1.5.75 2.25 1.13.75.38 1.5.75 2.25 1.13C16 20 14 22 12 22S8 20 8 16c0-2.5 1.34-5.21 3-7z" fill="currentColor"/>
+                <path d="M17 8c-1.66-1.66-4.66-2.02-7-.75C8.34 8.79 7 11.5 7 14c0 3 2 6 6 6s6-3 6-6c0-2.5-1.34-5.21-3-7zM8 12c.5-1.5 1.5-2.5 3-3 .75-.38 1.5-.75 2.25-1.13.75-.38 1.5-.75 2.25-1.13C16 4 14 2 12 2S8 4 8 8c0 2.5 1.34-5.21 3 7 .75.38 1.5.75 2.25 1.13.75.38 1.5.75 2.25 1.13C16 20 14 22 12 22S8 20 8 16c0-2.5 1.34-5.21 3-7z" fill="currentColor"/>
             </svg>
             <span>Circuito Saquarema Verde</span>
         </a>
@@ -524,7 +562,7 @@
         <p>Conecte-se com a natureza através de trilhas, cachoeiras e a rica biodiversidade do Circuito Saquarema Verde.</p>
         
         <a href="novidades.html" class="hero-button">
-            VEJA AS NOVIDADES DO CIRCUITO
+            <span>VEJA AS NOVIDADES DO CIRCUITO</span>
         </a>
     </div>
 
