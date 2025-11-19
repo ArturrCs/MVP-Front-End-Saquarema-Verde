@@ -14,7 +14,7 @@
             --verde-principal: #28a745; 
             --verde-escuro: #1e7e34;
             --laranja-destaque: #ff7f00; 
-            --laranja-escuro: #cc6600;  
+            --laranja-escuro: #cc6600; 
             --azul-acao: #007bff;
             --vermelho-restrito: #dc3545;
             --cinza-claro: #f8f9fa;
@@ -139,8 +139,8 @@
         }
 
         /* =======================================================
-           NOVOS ESTILOS DO PLAYER DE ÁUDIO CUSTOMIZADO
-           ======================================================= */
+            NOVOS ESTILOS DO PLAYER DE ÁUDIO CUSTOMIZADO
+            ======================================================= */
         .custom-audio-player {
             display: flex;
             align-items: center;
@@ -260,15 +260,15 @@
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); 
         }
         
-        /* Estilo para o Botão de Novidades na Hero Section */
+        /* Estilo para o Botão de Novidades na Hero Section (ALTERADO) */
         .hero-button {
             background-image: url('img/novidades.jpg'); 
             background-size: cover; 
             background-position: center; 
             background-color: transparent; 
             color: var(--branco); 
-            border: 2px solid var(--verde-principal); 
-            padding: 18px 35px; 
+            border: none; /* REMOVIDO PADDING E BORDA DO A */
+            padding: 0; /* REMOVIDO PADDING E BORDA DO A */
             border-radius: 50px; 
             font-size: 1.25em; 
             font-weight: 700;
@@ -297,13 +297,22 @@
             transition: background 0.4s ease;
         }
 
-        /* O texto do botão continua branco */
+        /* O texto do botão agora tem o padding e a borda (CORRIGIDO) */
         .hero-button span {
             position: relative;
             z-index: 2;
             color: var(--branco); 
             font-weight: 700; 
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); 
+            
+            /* NOVOS ESTILOS */
+            display: inline-block; 
+            /* CORRIGIDO: Borda agora é branca sutil (rgba(255, 255, 255, 0.6)) */
+            border: 2px solid rgba(255, 255, 255, 0.6); 
+            
+            padding: 18px 35px; 
+            border-radius: 50px; 
+            transition: border-color 0.4s ease, box-shadow 0.4s ease; 
         }
 
         .hero-button:hover::before {
@@ -316,6 +325,12 @@
             transform: translateY(-4px) scale(1.02); 
             box-shadow: 0 8px 25px rgba(255, 127, 0, 0.9); 
             text-decoration: none;
+        }
+
+        /* NOVO: Efeito de hover na borda do SPAN */
+        .hero-button:hover span {
+            border-color: var(--laranja-destaque); /* Altera a cor da borda no hover */
+            box-shadow: 0 0 10px rgba(255, 127, 0, 0.8); /* Adiciona uma sombra suave ao redor da borda */
         }
         
         /* Estilo para o título da seção Destaques */
@@ -692,7 +707,7 @@
         <p>Conecte-se com a natureza através de trilhas, cachoeiras e a rica biodiversidade do Circuito Saquarema Verde.</p>
         
         <a href="novidades.html" class="hero-button">
-            <span>VEJA AS NOVIDADES DO CIRCUITO</span>
+            <span>VEJA AS ÚLTIMAS NOVIDADES</span>
         </a>
     </div>
 
@@ -745,6 +760,7 @@
             
             // 1. CONFIGURAÇÃO INICIAL DO VOLUME
             audio.volume = volumeSlider.value; // Garante que o áudio comece no nível do slider (0.5)
+            // Lógica de ícone de volume (omiti o volume icon da lógica para simplificar, mas manteria a referência se necessário)
 
             // 2. LÓGICA DE PLAY/PAUSE PARA O BOTÃO CUSTOMIZADO
             playPauseBtn.addEventListener('click', () => {
@@ -767,13 +783,13 @@
             // 4. LÓGICA ORIGINAL: FECHAR MODAL E INICIAR ÁUDIO (MANTENDO O JOGO CONTINUADO)
             closeModalBtn.addEventListener('click', () => {
                 
-                // Inicia a reprodução
+                // Tenta iniciar a reprodução
                 audio.play()
                     .then(() => {
-                         console.log("Áudio iniciado com sucesso pelo clique do 'X'.");
-                         // ATUALIZA O ÍCONE após o Play bem-sucedido
-                         iconPlayPause.textContent = '⏸'; 
-                         iconPlayPause.style.marginLeft = '0'; 
+                        console.log("Áudio iniciado com sucesso pelo clique do 'X'.");
+                        // ATUALIZA O ÍCONE após o Play bem-sucedido
+                        iconPlayPause.textContent = '⏸'; 
+                        iconPlayPause.style.marginLeft = '0'; 
                     })
                     .catch(error => {
                         console.error("Erro ao iniciar a reprodução de áudio:", error);
