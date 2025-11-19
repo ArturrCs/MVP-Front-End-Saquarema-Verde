@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parque Estadual da Costa do Sol | Circuito Saquarema Verde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis CSS para cores */
+        :root {
+            --verde-principal: #28a745; 
+            --verde-escuro: #1e7e34;
+            --laranja-destaque: #ff7f00; 
+            --laranja-escuro: #cc6600; 
+            --azul-acao: #007bff;
+            --vermelho-restrito: #dc3545;
+            --cinza-claro: #f8f9fa;
+            --cinza-medio: #e9ecef;
+            --branco: #ffffff;
+            --texto-principal: #333;
+            --cinza-muito-escuro: #212529; 
+        }
+
+        /* Estilos globais */
+        body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; background-color: var(--cinza-claro); color: var(--texto-principal); line-height: 1.6; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; color: var(--verde-escuro); margin-top: 0; }
+        a { text-decoration: none; color: var(--azul-acao); }
+        a:hover { text-decoration: underline; }
+        main#content-area { min-height: 500px; }
+        
+        /* Wrapper para centralizar conteúdo em 1100px */
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px; 
+            width: 100%;
+            box-sizing: border-box; 
+        }
+        
+        /* CABEÇALHO */
+        
+header {
+    background-color: var(--branco);
+    color: var(--texto-principal);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+        /* Aplica as propriedades flex dentro do wrapper do header */
+        header .wrapper {
+            display: flex; 
+            justify-content: space-between; /* Mantém logo e botões nas extremidades */
+            align-items: center;
+        }
+
+        .header-logo { font-family: 'Cabin Sketch', cursive; font-size: 2.5em; font-weight: 700; color: var(--verde-escuro); text-decoration: none; display: flex; align-items: center; line-height: 0.9; }
+        .header-logo .leaf-icon { width: 35px; height: 35px; margin-right: 10px; fill: var(--verde-principal); transform: rotate(-15deg); transition: transform 0.3s ease; }
+        .actions-group { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            margin-left: auto; /* Garante que o grupo vá para a extrema direita */
+            max-width: 50%; 
+        }
+        /* Ajuste aqui: Removido 'flex: 1' dos links para evitar que ocupem espaço indevido, forçando-os à direita. */
+        .actions-group a { 
+            color: var(--texto-principal); 
+            font-weight: 600; 
+            padding: 8px 12px; 
+            position: relative; 
+            background-color: rgba(40, 167, 69, 0.05); 
+            border-radius: 4px; 
+            transition: background-color 0.3s ease; 
+            text-align: center; 
+            min-width: 100px; 
+        }
+        .actions-group a:hover { background-color: rgba(40, 167, 69, 0.15); text-decoration: none; }
+        .actions-group a::after { content: ''; position: absolute; left: 50%; bottom: 0; width: 0; height: 2px; background-color: var(--verde-principal); transition: width 0.3s ease-in-out, left 0.3s ease-in-out; }
+        .actions-group a:hover::after { width: 100%; left: 0; }
+        
+        /* RODAPÉ */
+        footer { 
+            background-color: var(--cinza-muito-escuro); 
+            color: var(--branco); 
+            padding: 10px 0; 
+            margin-top: 50px; 
+            font-size: 0.9em; 
+            position: relative; 
+            width: 100%; 
+        }
+        /* Aplica as propriedades flex dentro do wrapper do footer */
+        footer .wrapper {
+            display: flex; 
+            /* Mudança: Remove justify-content: space-between, pois só teremos um item centralizado */
+            justify-content: center; /* Centraliza o conteúdo (footer-content) */
+            align-items: center;
+        }
+
+        footer .footer-content { flex-grow: 1; text-align: center; }
+        footer p { margin: 2px 0; color: var(--branco); }
+        
+        /* NOVO ESTILO: Classe base para itens de navegação no rodapé */
+        .footer-nav-item {
+            /* Garante que o item não encolhe, mantendo o tamanho fixo */
+            flex-shrink: 0;
+            /* Copia as propriedades de dimensionamento do botão */
+            padding: 6px 10px; 
+            text-transform: uppercase; 
+            font-size: 0.8em; 
+            /* Estilos básicos de link para garantir que o espaçador ocupe o mesmo espaço */
+            text-decoration: none;
+            display: inline-block; /* Garante que o box model seja consistente */
+        }
+        
+        /* Estilos do botão (mantidos mas não usados no HTML) */
+        .footer-admin-button { 
+            background-color: var(--branco); 
+            color: var(--verde-escuro); 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-weight: 700; 
+            transition: background-color 0.3s ease, color 0.3s ease; 
+        }
+        .footer-admin-button:hover { background-color: var(--cinza-medio); color: var(--verde-principal); text-decoration: none; }
+
+        /* Estilo do espaçador (invisível) - mantido mas não usado no HTML */
+        .footer-spacer {
+            visibility: hidden; 
+            pointer-events: none; 
+            background-color: transparent !important; /* Certifica-se de que é invisível */
+            color: transparent; /* Garante que o texto não apareça, mas o espaço seja mantido */
+        }
+
+        /* =======================================================
+            ESTILOS ESPECÍFICOS COSTA DO SOL (Inspirados no WWF)
+            ======================================================= */
+        
+        /* 1. SEÇÃO HERO / DESTAQUE (Topo da Página) */
+        .page-hero {
+            /* Imagem de fundo deve ser acessível se o user tiver feito upload */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('costa_do_sol/img1.jpg') no-repeat center center/cover;
+            color: var(--branco);
+            padding: 80px 40px; 
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            text-align: center; 
+        }
+
+        .page-hero h1 {
+            color: var(--branco);
+            font-size: 4em; 
+            margin-bottom: 20px; 
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+            line-height: 1.1;
+            text-transform: uppercase; 
+            max-width: 800px; 
+        }
+
+        /* NOVO ESTILO: Sublinhado para o h1 (VERDE) */
+        .page-hero h1::after {
+            content: '';
+            display: block;
+            width: 80px; 
+            height: 4px; 
+            background-color: var(--verde-principal); 
+            margin: 15px auto 0 auto; 
+        }
+
+        .page-hero p {
+            font-size: 1.4em;
+            max-width: 900px; 
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            margin-top: 20px; 
+        }
+
+        /* 2. CONTEÚDO PRINCIPAL (LAYOUT DE COLUNA ÚNICA) */
+        .content-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 40px;
+        }
+        
+        /* 4. MÓDULOS DE CONTEÚDO (MAIN CONTENT) */
+        
+        /* Centraliza o texto de todas as seções */
+        .main-content {
+            text-align: center; 
+        }
+
+        .module-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--cinza-medio);
+        }
+
+        .module-section h2 {
+            font-size: 2em;
+            color: var(--verde-escuro);
+            margin-bottom: 15px;
+        }
+        
+        /* Layout para "Biodiversidade em Destaque" com imagem à direita */
+        .biodiversity-container {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 30px; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding-bottom: 20px; 
+        }
+
+        .biodiversity-text {
+            flex: 1; 
+            text-align: center; 
+        }
+
+        .biodiversity-image-right {
+            max-width: 450px; 
+            width: 100%; 
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            flex-shrink: 0; 
+        }
+
+        /* Layout para "Rotas e Trilhas" com imagem à esquerda */
+        .routes-container {
+            display: flex;
+            flex-direction: column; /* Padrão mobile: imagem acima do texto */
+            align-items: center; /* Centraliza itens no eixo transversal */
+            gap: 30px; /* Espaço entre imagem e texto */
+            max-width: 900px; 
+            margin: 0 auto; /* Centraliza o container na página */
+            padding-bottom: 20px; /* Mantém o espaçamento antes da borda */
+        }
+
+        .routes-image-left {
+            max-width: 450px; 
+            width: 100%; /* Garante que seja responsiva */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .routes-text {
+            flex: 1;
+            text-align: center; /* Centraliza o texto dentro de seu próprio contêiner */
+        }
+
+        .module-section p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+        
+        /* Ajuste para listas dentro do main-content: 
+            Centraliza o bloco UL e alinha o texto interno à esquerda para melhor leitura */
+        .module-section ul {
+            display: inline-block;
+            text-align: left;
+            list-style-position: inside;
+            padding-left: 0;
+            margin: 0; /* Remove margens extras */
+        }
+
+        /* 5. RESPONSIVIDADE ESPECÍFICA */
+        @media (min-width: 768px) {
+            .biodiversity-container {
+                flex-direction: row; 
+                align-items: center; 
+                text-align: left; 
+            }
+            .biodiversity-text {
+                text-align: left; 
+            }
+            
+            /* Garante que a imagem (que vem primeiro no HTML) fique à esquerda no desktop */
+            .routes-container {
+                flex-direction: row; /* Volta para row (Imagem | Texto) */
+                align-items: center; 
+                text-align: left; 
+            }
+            .routes-text {
+                text-align: left; 
+            }
+            .page-hero h1 {
+                font-size: 2.5em;
+            }
+            .page-hero h1::after { 
+                margin: 10px auto 0 auto; 
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+<header>
+    <a href="index.html" class="header-logo">
+        <svg class="leaf-icon" viewBox="0 0 24 24">
+            <path d="M17 8c-1.66-1.66-4.66-2.02-7-.75C8.34 8.79 7 11.5 7 14c0 3 2 6 6 6s6-3 6-6c0-2.5-1.34-5.21-3-7zM8 12c.5-1.5 1.5-2.5 3-3 .75-.38 1.5-.75 2.25-1.13.75-.38 1.5.75 2.25-1.13C16 4 14 2 12 2S8 4 8 8c0 2.5 1.34-5.21 3 7 .75.38 1.5.75 2.25 1.13.75.38 1.5.75 2.25 1.13C16 20 14 22 12 22S8 20 8 16c0-2.5 1.34-5.21 3-7z" fill="currentColor"/>
+        </svg>
+        <span>Circuito Saquarema Verde</span>
+    </a>
+
+    <div class="actions-group">
+        <a href="index.html">Início</a>
+        <a href="biodiversidade.html">Biodiversidade</a>
+        <a href="trilhas.html">Trilhas</a>
+        <a href="cachoeiras.html">Cachoeiras</a>
+        <a href="eventos.html">Eventos</a>
+    </div>
+</header>
+
+
+    <main id="content-area">
+
+        <div class="page-hero">
+            <h1>Parque Estadual da Costa do Sol</h1>
+        </div>
+
+        <div class="content-container">
+            
+            <section class="main-content">
+                
+                <div class="module-section">
+                    <h2>O Desafio da Conservação</h2>
+                    <p>O Parque da Costa do Sol, estabelecido em 2011, enfrenta a pressão do crescimento urbano e do turismo desordenado. Seu território fragmentado exige uma gestão rigorosa para proteger as dunas, lagoas e os trechos de Mata Atlântica que servem de berçário para diversas espécies. A área é crucial para a proteção de tartarugas marinhas e para a rota de aves migratórias.</p>
+                    <p>Nosso trabalho foca em ações de sensibilização, fiscalização e apoio à pesquisa científica para garantir que o Parque mantenha sua integridade ecológica para as futuras gerações. **A colaboração da comunidade é a chave para o sucesso.**</p>
+                </div>
+
+                <div class="module-section">
+                    <div class="biodiversity-container">
+                        <div class="biodiversity-text">
+                            <h2>Biodiversidade em Destaque</h2>
+                            <p>A restinga é o ecossistema predominante e abriga uma flora especializada, resistente à salinidade e à baixa disponibilidade de água. Dentre a fauna, destacamos o Mico-leão-dourado (embora mais comum em outras áreas, é um símbolo da Mata Atlântica) e espécies de aves endêmicas que dependem das lagoas costeiras para alimentação e reprodução.</p>
+                        </div>
+                        <img src="costa_do_sol/img2.jpg" alt="Exemplo da fauna ou flora do Parque Costa do Sol" class="biodiversity-image-right" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Biodiversidade'">
+                    </div>
+                </div>
+
+                <div class="module-section" style="border-bottom: none;">
+                    <div class="routes-container">
+                        <!-- Imagem à esquerda para "Rotas e Trilhas" -->
+                        <img src="costa_do_sol/img3.jpg" alt="Trilha no Parque Costa do Sol" class="routes-image-left" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Trilhas'">
+                        <div class="routes-text">
+                            <h2>Rotas e Trilhas</h2>
+                            <p>Atualmente, o Parque oferece poucas trilhas formais para visitação devido à necessidade de preservação. As áreas liberadas são monitoradas e focam na educação ambiental.</p>
+                            <ul>
+                                <li>**Trilha da Restinga:** Percurso de 1.5km, ideal para observação de flora.</li>
+                                <li>**Mirante da Lagoa:** Vista panorâmica e ponto de observação de aves.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    
+    </main>
+
+    <footer>
+        <div class="wrapper">
+            <!-- Removidos o botão "Área Restrita" e o espaçador invisível. O conteúdo central será centralizado. -->
+            
+            <!-- Conteúdo central (Copyright) -->
+            <div class="footer-content">
+                <p>&copy; 2025 Circuito Saquarema Verde. Todos os direitos reservados.</p>
+            </div>
+            
+        </div>
+    </footer>
+
+</body>
+</html>
