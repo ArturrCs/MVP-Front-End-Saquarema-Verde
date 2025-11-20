@@ -107,19 +107,23 @@
             max-width: 50%; 
         }
         
-        .actions-group a { 
-            color: var(--texto-principal);
-            font-weight: 600;
-            padding: 8px 12px; 
-            position: relative;
-            background-color: rgba(40, 167, 69, 0.05); 
-            border-radius: 4px;
-            transition: background-color 0.3s ease; 
-            
-            flex: 1; 
-            text-align: center; 
-            min-width: 100px; 
-        }
+.actions-group a { 
+	            color: var(--texto-principal);
+	            font-weight: 600;
+	            padding: 8px 12px; 
+	            position: relative;
+	            background-color: rgba(40, 167, 69, 0.05); 
+	            border-radius: 4px;
+	            transition: background-color 0.3s ease; 
+	            
+	            /* Ajuste para garantir que todos os botões tenham o mesmo tamanho */
+	            flex: 1 1 120px; /* Garante uma base de 120px e permite crescimento/encolhimento igual */
+	            text-align: center; 
+	            min-width: 100px; 
+	            display: flex; /* Adiciona flexbox */
+	            align-items: center; /* Centraliza verticalmente */
+	            justify-content: center; /* Centraliza horizontalmente */
+	        }
 
         .actions-group a:hover {
             background-color: rgba(40, 167, 69, 0.15); 
@@ -552,7 +556,6 @@
         </a>
         
         <div class="actions-group">
-            <a href="index.html">Início</a>
             <a href="biodiversidade.html">Biodiversidade</a> 
             <a href="trilhas.html">Trilhas</a>
             <a href="cachoeiras.html">Cachoeiras</a>
