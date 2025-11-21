@@ -496,18 +496,29 @@
             header {
                 flex-direction: column;
                 padding: 15px 20px;
+                /* Removido: align-items: center; - Será aplicado no actions-group, se necessário */
             }
+            .header-logo {
+                 /* Garantir que o logo centralize-se primeiro */
+                 text-align: center;
+                 width: 100%;
+            }
+
             .actions-group {
                 margin-top: 10px;
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-wrap: nowrap; /* Impede a quebra de linha */
+                justify-content: center; /* Centraliza os botões entre si */
                 gap: 15px;
                 max-width: 100%; 
+                
+                /* NOVO CRUCIAL: Substitui o margin-left: auto do desktop */
+                margin: 10px auto 0 auto; 
             }
             .actions-group a {
                 font-size: 0.9em; 
-                flex: 1 1 45%; 
+                flex: 0 0 auto; 
+                min-width: unset; 
             }
 
             .hero-section {
@@ -517,23 +528,23 @@
                 text-align: left; 
             }
             .hero-section h1 {
-                 margin-left: 0; 
+                margin-left: 0; 
                 font-size: 2.5em; 
                 max-width: 100%; 
             }
 
             /* RODAPÉ RESPONSIVO (mobile) */
             footer {
-                flex-direction: column; /* Empilha o conteúdo */
+                flex-direction: column; 
                 justify-content: center;
                 align-items: center;
-                padding: 10px 20px; /* Ajusta o padding */
+                padding: 10px 20px; 
             }
 
             .footer-admin-button {
-                position: static; /* Volta para a posição normal no fluxo */
+                position: static; 
                 margin-top: 10px; 
-                order: 3; /* Garante que o botão fique abaixo do copyright no layout de coluna */
+                order: 3; 
                 transform: unset;
                 right: unset;
                 top: unset;

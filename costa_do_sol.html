@@ -323,31 +323,42 @@
         /* RESPONSIVIDADE (Ajustada) */
         /* -------------------------------------- */
         @media (max-width: 768px) {
+            
+            /* --- 1. CABEÇALHO --- */
             header {
                 flex-direction: column;
                 padding: 15px 20px;
+                align-items: center; /* Centraliza o conteúdo (Logo e Menu) */
             }
             .actions-group {
                 margin-top: 10px;
                 display: flex;
-                flex-wrap: wrap;
+                flex-wrap: nowrap; /* IMPEDE A QUEBRA: Garante botões lado a lado */
                 justify-content: center;
                 gap: 15px;
-                max-width: 100%; 
+                max-width: 100%;
+                margin: 10px auto 0 auto; /* Centraliza o grupo */
             }
             .actions-group a {
                 font-size: 0.9em; 
-                flex: 1 1 45%; 
+                flex: 0 0 auto; /* Ajusta o tamanho dos botões ao conteúdo */
+                min-width: unset; 
             }
             
-            /* Ajuste de altura para mobile */
+            /* --- 2. HERO SECTION --- */
             .page-hero {
-                padding: 60px 20px; /* Reduz padding em mobile */
-                min-height: 25vh; /* Altura mínima menor em mobile */
+                padding: 60px 20px; 
+                min-height: 25vh; 
             }
-            
             .page-hero h1 {
                 font-size: 2.5em; 
+            }
+            
+            /* --- 3. CONTEÚDO PRINCIPAL --- */
+
+            /* Alinhamento de texto para o bloco de conservação */
+            .module-section div[style="text-align: center;"] {
+                text-align: left !important; /* Anula o estilo inline para melhor leitura */
             }
             
             /* Layout para "Biodiversidade em Destaque" no mobile (imagem acima do texto) */
@@ -356,7 +367,10 @@
                 text-align: center; 
             }
             .biodiversity-text {
-                text-align: center; 
+                text-align: left; /* CORREÇÃO: Alinha o texto à esquerda para facilitar a leitura */
+            }
+            .biodiversity-image-right {
+                max-width: 100%; /* Garante que a imagem ocupe a largura total */
             }
 
             /* Layout para "Rotas e Trilhas" no mobile (imagem acima do texto) */
@@ -365,10 +379,13 @@
                 text-align: center; 
             }
             .routes-text {
-                text-align: center; 
+                text-align: left; /* CORREÇÃO: Alinha o texto à esquerda para facilitar a leitura */
             }
-
-            /* RODAPÉ RESPONSIVO (mobile) */
+            .routes-image-left {
+                max-width: 100%; /* Garante que a imagem ocupe a largura total */
+            }
+            
+            /* --- 4. RODAPÉ --- */
             footer {
                 flex-direction: column; 
                 justify-content: center;
@@ -387,7 +404,7 @@
         }
         
         @media (min-width: 768px) {
-            /* Garante que o texto fique à esquerda do container no desktop */
+            /* Regras mantidas para garantir que o layout desktop não seja afetado */
             .routes-container {
                 flex-direction: row; 
             }
