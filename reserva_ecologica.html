@@ -318,35 +318,44 @@
         /* RESPONSIVIDADE (Ajustada) */
         /* -------------------------------------- */
         @media (max-width: 768px) {
-            
-            /* --- 1. CABEÇALHO --- */
             header {
                 flex-direction: column;
                 padding: 15px 20px;
-                align-items: center; /* Centraliza o conteúdo (Logo e Menu) */
+                /* Removido: align-items: center; - Será aplicado no actions-group, se necessário */
             }
+            .header-logo {
+                 /* Garantir que o logo centralize-se primeiro */
+                 text-align: center;
+                 width: 100%;
+            }
+
             .actions-group {
                 margin-top: 10px;
                 display: flex;
-                flex-wrap: nowrap; /* IMPEDE A QUEBRA: Garante botões lado a lado */
-                justify-content: center;
+                flex-wrap: nowrap; /* Impede a quebra de linha */
+                justify-content: center; /* Centraliza os botões entre si */
                 gap: 15px;
-                max-width: 100%;
-                margin: 10px auto 0 auto; /* Centraliza o grupo */
+                max-width: 100%; 
+                
+                /* NOVO CRUCIAL: Substitui o margin-left: auto do desktop */
+                margin: 10px auto 0 auto; 
             }
             .actions-group a {
                 font-size: 0.9em; 
-                flex: 0 0 auto; /* Ajusta o tamanho dos botões ao conteúdo */
+                flex: 0 0 auto; 
                 min-width: unset; 
             }
-            
-            /* --- 2. HERO SECTION --- */
-            .page-hero {
-                padding: 60px 20px; 
-                min-height: 25vh; 
+
+            .hero-section {
+                padding: 30px 20px; 
+                min-height: 280px; 
+                align-items: flex-start; 
+                text-align: left; 
             }
-            .page-hero h1 {
+            .hero-section h1 {
+                margin-left: 0; 
                 font-size: 2.5em; 
+                max-width: 100%; 
             }
             
             /* --- 3. CONTEÚDO PRINCIPAL --- */

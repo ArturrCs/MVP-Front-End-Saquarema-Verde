@@ -52,8 +52,6 @@
         /* Removemos a limitação de largura e padding do MAIN, mantendo a altura mínima */
         main#content-area { 
             min-height: 500px; 
-            padding: 0; 
-            margin: auto;
         }
 
         /* Cabeçalho Fixo (mantido do index.html) */
@@ -70,7 +68,6 @@
             z-index: 1000;
         }
 
-        /* O logo usa a fonte Cabin Sketch (mantido do index.html) */
         .header-logo {
             font-family: 'Cabin Sketch', cursive; 
             font-size: 2.5em; 
@@ -95,6 +92,11 @@
             transform: rotate(0deg) scale(1.1); 
         }
 
+        .header-logo span {
+            margin-left: 0; 
+            color: inherit; 
+        }
+
         .actions-group {
             display: flex;
             align-items: center;
@@ -103,7 +105,7 @@
             max-width: 50%; 
         }
         
-        .actions-group a { 
+.actions-group a { 
             color: var(--texto-principal);
             font-weight: 600;
             padding: 8px 12px; 
@@ -157,7 +159,7 @@
             color: var(--branco);
             font-family: 'Montserrat', sans-serif; 
             font-size: 3.5em; 
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             line-height: 1.1;
             position: relative;
@@ -323,35 +325,44 @@
         /* RESPONSIVIDADE (Ajustada) */
         /* -------------------------------------- */
         @media (max-width: 768px) {
-            
-            /* --- 1. CABEÇALHO --- */
             header {
                 flex-direction: column;
                 padding: 15px 20px;
-                align-items: center; /* Centraliza o conteúdo (Logo e Menu) */
+                /* Removido: align-items: center; - Será aplicado no actions-group, se necessário */
             }
+            .header-logo {
+                 /* Garantir que o logo centralize-se primeiro */
+                 text-align: center;
+                 width: 100%;
+            }
+
             .actions-group {
                 margin-top: 10px;
                 display: flex;
-                flex-wrap: nowrap; /* IMPEDE A QUEBRA: Garante botões lado a lado */
-                justify-content: center;
+                flex-wrap: nowrap; /* Impede a quebra de linha */
+                justify-content: center; /* Centraliza os botões entre si */
                 gap: 15px;
-                max-width: 100%;
-                margin: 10px auto 0 auto; /* Centraliza o grupo */
+                max-width: 100%; 
+                
+                /* NOVO CRUCIAL: Substitui o margin-left: auto do desktop */
+                margin: 10px auto 0 auto; 
             }
             .actions-group a {
                 font-size: 0.9em; 
-                flex: 0 0 auto; /* Ajusta o tamanho dos botões ao conteúdo */
+                flex: 0 0 auto; 
                 min-width: unset; 
             }
-            
-            /* --- 2. HERO SECTION --- */
-            .page-hero {
-                padding: 60px 20px; 
-                min-height: 25vh; 
+
+            .hero-section {
+                padding: 30px 20px; 
+                min-height: 280px; 
+                align-items: flex-start; 
+                text-align: left; 
             }
-            .page-hero h1 {
+            .hero-section h1 {
+                margin-left: 0; 
                 font-size: 2.5em; 
+                max-width: 100%; 
             }
             
             /* --- 3. CONTEÚDO PRINCIPAL --- */
