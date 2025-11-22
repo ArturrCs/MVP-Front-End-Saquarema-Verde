@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuito Saquarema Verde - Reserva Ecológica Estadual de Jacarepiá</title>
+    <title>Circuito Saquarema Verde - Cachoeiras</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -49,11 +49,9 @@
             text-decoration: underline;
         }
         
-        /* CORREÇÃO: Removemos a limitação de largura e padding do MAIN */
+        /* Removemos a limitação de largura e padding do MAIN, mantendo a altura mínima */
         main#content-area { 
             min-height: 500px; 
-            padding: 0; 
-            margin: auto;
         }
 
         /* Cabeçalho Fixo (mantido do index.html) */
@@ -70,7 +68,6 @@
             z-index: 1000;
         }
 
-        /* O logo usa a fonte Cabin Sketch (mantido do index.html) */
         .header-logo {
             font-family: 'Cabin Sketch', cursive; 
             font-size: 2.5em; 
@@ -95,6 +92,11 @@
             transform: rotate(0deg) scale(1.1); 
         }
 
+        .header-logo span {
+            margin-left: 0; 
+            color: inherit; 
+        }
+
         .actions-group {
             display: flex;
             align-items: center;
@@ -103,7 +105,7 @@
             max-width: 50%; 
         }
         
-        .actions-group a { 
+.actions-group a { 
             color: var(--texto-principal);
             font-weight: 600;
             padding: 8px 12px; 
@@ -142,29 +144,30 @@
 
         /* Configuração da primeira imagem de fundo. */
         .page-hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('reserva_ecologica/img1.jpg') no-repeat center center/cover; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cachoeiras/img1.jpg') no-repeat center center/cover; 
             color: var(--branco);
-            text-align: center; 
+            text-align: left; 
             padding: 80px 40px; 
             min-height: 300px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: flex-end; 
         }
-        
+
         /* Configuração do texto em frente a primeira imagem de fundo. */
         .page-hero h1 {
             color: var(--branco);
             font-family: 'Montserrat', sans-serif; 
             font-size: 3.5em; 
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             line-height: 1.1;
             position: relative;
-            text-align: center; 
+            text-align: right; 
         }
-        
-        /* Configuração da barrinha verde embaixo do texto em frente a primeira imagem de fundo. */
+
+         /* Configuração da barrinha verde embaixo do texto em frente a primeira imagem de fundo. */       
         .page-hero h1::after {
             content: '';
             display: block;
@@ -175,9 +178,9 @@
         }
 
         /* -------------------------------------- */
-        /* ESTILOS ESPECÍFICOS DE CONTEÚDO (NOVOS) */
+        /* ESTILOS ESPECÍFICOS DE CONTEÚDO */
         /* -------------------------------------- */
-        /* Novo contêiner para o conteúdo principal, garantindo a centralização e padding */
+        /* Contêiner para o conteúdo principal, garantindo a centralização e padding */
         .content-container {
             max-width: 1200px;
             padding: 0 20px;
@@ -186,7 +189,7 @@
         
         .main-content {
             margin: 40px auto;
-            max-width: 1000px; /* Reduzido para legibilidade */
+            max-width: 1000px; 
             padding: 0;
         }
         
@@ -194,6 +197,11 @@
             padding: 20px 0;
             margin-bottom: 30px;
             border-bottom: 1px solid var(--cinza-medio);
+        }
+        
+        /* LINHA MODIFICADA PARA CENTRALIZAR OS TÍTULOS (H2) */
+        .module-section h2 {
+            text-align: center;
         }
 
         /* Layout para "Biodiversidade em Destaque" com imagem à direita */
@@ -406,6 +414,22 @@
                 top: unset;
             }
         }
+        
+        @media (min-width: 768px) {
+            /* Regras mantidas para garantir que o layout desktop não seja afetado */
+            .routes-container {
+                flex-direction: row; 
+            }
+            .routes-text {
+                text-align: left; 
+            }
+            .biodiversity-container {
+                flex-direction: row-reverse; 
+            }
+            .biodiversity-text {
+                text-align: left; 
+            }
+        }
     </style>
 </head>
 <body>
@@ -426,7 +450,7 @@
     </header>
 
     <div class="page-hero">
-        <h1>Reserva Ecológica Estadual de Jacarepiá</h1>
+        <h1>Conheça Nossas Cachoeiras</h1>
     </div>
     
     <main id="content-area">
@@ -434,32 +458,38 @@
         <div class="content-container">
             
             <section class="main-content">
-                
-                <div class="module-section">
-                    <div style="text-align: center;"> 
-                    <h2>A Importância Hídrica e o Manguezal</h2>
-                    <p>Jacarepiá é uma Área de Proteção Ambiental que engloba um dos ecossistemas mais vitais da região: o manguezal. Essa formação natural funciona como um filtro biológico, protegendo a qualidade da água das lagoas de Saquarema e garantindo a sobrevivência de espécies que se reproduzem na transição entre o ambiente marinho e o de água doce.</p>
-                    <p>O manguezal, com suas raízes aéreas características (pneumatóforos), serve como uma barreira natural contra a erosão costeira e é essencial para o ciclo de nutrientes. A reserva também protege as nascentes e os pequenos rios que alimentam a Lagoa de Saquarema.</p>
-                </div>
+
 
                 <div class="module-section">
                     <div class="biodiversity-container">
-                        <img src="reserva_ecologica/img2.jpg" alt="Exemplo da fauna ou flora do Parque Costa do Sol" class="biodiversity-image-right" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Avifauna'">
+                        <img src="cachoeiras/img2.jpg" class="biodiversity-image-right" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Biodiversidade'">
                         <div class="biodiversity-text">
-                            <h2>A Avifauna da Reserva</h2>
-                            <p>Jacarepiá é um verdadeiro santuário para a observação de aves (avifauna), especialmente espécies aquáticas e migratórias. As lagoas, banhados e o mangue fornecem refúgio e alimento em abundância. A preservação desses ambientes é crítica para a manutenção dessas populações. Espécies comuns incluem garças, biguás, socós e a majestosa colhereiro. A diversidade faz da reserva um ponto de interesse fundamental para a ornitologia e ecoturismo de observação.</p>
+                            <h2>Cachoeira do Roncador</h2>
+                            <p>Localizada na Serra do Roncador, a cachoeira do Roncador é um dos tesouros naturais menos conhecidos da Região dos Lagos, oferecendo um contraste refrescante com as famosas praias da cidade. Destino perfeito em Saquarema para aliviar o calor e conectar-se com a natureza, longe do movimento da orla.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="module-section" style="border-bottom: none;">
                     <div class="routes-container">
-                        <img src="reserva_ecologica/img3.jpg" alt="Trilha no Parque Costa do Sol" class="routes-image-left" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Acesso+Restrito'">
+                        <img src="cachoeiras/img3.jpg" class="routes-image-left" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Trilhas'">
                         <div class="routes-text">
-                            <p>A Reserva de Jacarepiá, por ser uma área de proteção integral, tem o acesso restrito e focado principalmente em atividades de pesquisa e educação ambiental, devidamente autorizadas pelo órgão gestor. A visitação pública é limitada para proteger o ecossistema sensível do manguezal.</p>
+                            <h2>Cachoeira do Tinguí</h2>
+                            <p>Um verdadeiro refúgio verde, escondido nas encostas da Serra do Tinguí, na divisa entre os municípios de Saquarema e Rio Bonito. Embora o nome seja Tinguí, muitas vezes é referenciada como uma das mais belas quedas d'água da região serrana de Saquarema. Sua localização remota e o acesso por trilhas bem marcadas garantem uma experiência de imersão completa na Mata Atlântica.</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="module-section">
+                    <div class="biodiversity-container">
+                        <img src="cachoeiras/img4.jpg" class="biodiversity-image-right" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Biodiversidade'">
+                        <div class="biodiversity-text">
+                            <h2>Cachoeira Represa do Rio Seco</h2>
+                            <p>um local que combina a beleza natural da queda d'água com um importante marco histórico e de engenharia local: a antiga represa. Localizada na área de serra de Saquarema, em uma região de acesso controlado e preservado, ela oferece um ambiente único para o ecoturismo.</p>
+                        </div>
+                    </div>
+                </div>
+
 
             </section>
 
