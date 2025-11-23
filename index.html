@@ -149,7 +149,7 @@
         
         /* Seção de Destaque (Hero Section) */
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/img1.jpg') no-repeat center center/cover; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('index/img1.jpg') no-repeat center center/cover; 
             color: var(--branco);
             text-align: left; 
             padding: 33px 40px; 
@@ -183,7 +183,7 @@
         
         /* Estilo para o Botão de Novidades na Hero Section */
         .hero-button {
-            background-image: url('img/novidades.jpg'); 
+            background-image: url('index/novidades.jpg'); 
             background-size: cover; 
             background-position: center; 
             background-color: transparent; 
@@ -341,11 +341,11 @@
 
         /* CONFIGURAÇÕES ESPECÍFICAS DE IMAGEM */
         #costa-do-sol::before {
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('img/img2.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('index/img2.jpg');
         }
 
         #jacarepia::before {
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('img/img3.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('index/img3.jpg');
         }
         
         /* Estilo para o grupo de navegação inferior */
@@ -426,15 +426,15 @@
 
         /* ESTILOS ESPECÍFICOS PARA CADA BOTÃO COM IMAGEM */
         #btn-trilhas {
-            background-image: url('img/img5.jpg');
+            background-image: url('index/img5.jpg');
         }
 
         #btn-cachoeiras {
-            background-image: url('img/img6.jpg');
+            background-image: url('index/img6.jpg');
         }
 
         #btn-eventos {
-            background-image: url('img/img7.jpg');
+            background-image: url('index/img7.jpg');
         }
 
         /* Rodapé */
@@ -479,10 +479,10 @@
             
             /* NOVAS MUDANÇAS PARA CENTRALIZAÇÃO NO DESKTOP/TABLET */
             position: absolute; 
-            right: 40px; /* Alinhado com o padding de 40px do footer */
+            right: 40px;
             top: 50%;
             transform: translateY(-50%);
-            order: unset; /* Remove a ordem definida anteriormente */
+            order: unset;
         }
 
         .footer-admin-button:hover {
@@ -496,7 +496,6 @@
             header {
                 flex-direction: column;
                 padding: 15px 20px;
-                /* Removido: align-items: center; - Será aplicado no actions-group, se necessário */
             }
             .header-logo {
                  /* Garantir que o logo centralize-se primeiro */
@@ -511,8 +510,6 @@
                 justify-content: center; /* Centraliza os botões entre si */
                 gap: 15px;
                 max-width: 100%; 
-                
-                /* NOVO CRUCIAL: Substitui o margin-left: auto do desktop */
                 margin: 10px auto 0 auto; 
             }
             .actions-group a {
@@ -581,7 +578,7 @@
         </div>
 
         <div class="main-title">
-            <h2>Destaques</h2>
+            <h2>Áreas de destaque:</h2>
         </div>
 
         <div class="container">
