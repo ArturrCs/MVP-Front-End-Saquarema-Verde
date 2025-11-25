@@ -9,22 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* Variáveis CSS para cores (mantidas do index.html) */
+        /* Configurações das cores */
         :root {
             --verde-principal: #28a745; 
             --verde-escuro: #1e7e34;
-            --laranja-destaque: #ff7f00; 
-            --laranja-escuro: #cc6600; 
-            --azul-acao: #007bff;
-            --vermelho-restrito: #dc3545;
             --cinza-claro: #f8f9fa;
             --cinza-medio: #e9ecef;
             --branco: #ffffff;
             --texto-principal: #333;
             --cinza-muito-escuro: #212529; 
         }
-
-        /* Estilos globais (mantidos do index.html) */
+        /* Configurações de texto */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
@@ -39,24 +34,16 @@
             color: var(--verde-escuro);
             margin-top: 0;
         }
-
-        a {
-            text-decoration: none;
-            color: var(--azul-acao);
-        }
-
+        
         a:hover {
             text-decoration: underline;
         }
         
-        /* CORREÇÃO: Removemos a limitação de largura e padding do MAIN */
         main#content-area { 
-            min-height: 500px; 
-            padding: 0; 
-            margin: auto;
+            min-height: 500px;
         }
 
-        /* Cabeçalho Fixo (mantido do index.html) */
+        /* Cabeçalho */
         header {
             background-color: var(--branco);
             color: var(--texto-principal);
@@ -70,7 +57,6 @@
             z-index: 1000;
         }
 
-        /* O logo usa a fonte Cabin Sketch (mantido do index.html) */
         .header-logo {
             font-family: 'Cabin Sketch', cursive; 
             font-size: 2.5em; 
@@ -93,6 +79,11 @@
 
         .header-logo:hover .leaf-icon {
             transform: rotate(0deg) scale(1.1); 
+        }
+
+        .header-logo span {
+            margin-left: 0; 
+            color: inherit; 
         }
 
         .actions-group {
@@ -174,10 +165,7 @@
             margin: 10px auto 0 auto;
         }
 
-        /* -------------------------------------- */
-        /* ESTILOS ESPECÍFICOS DE CONTEÚDO (NOVOS) */
-        /* -------------------------------------- */
-        /* Novo contêiner para o conteúdo principal, garantindo a centralização e padding */
+        /* Contêiner para o conteúdo principal */
         .content-container {
             max-width: 1200px;
             padding: 0 20px;
@@ -186,7 +174,7 @@
         
         .main-content {
             margin: 40px auto;
-            max-width: 1000px; /* Reduzido para legibilidade */
+            max-width: 1000px; 
             padding: 0;
         }
         
@@ -195,9 +183,13 @@
             margin-bottom: 30px;
             border-bottom: 1px solid var(--cinza-medio);
         }
+        
+        .module-section h2 {
+            text-align: center;
+        }
 
-        /* Layout para "Biodiversidade em Destaque" com imagem à direita */
-        .biodiversity-container {
+         /* Layout para imagem à direita */
+        .titulo1-container {
             display: flex; 
             flex-direction: row-reverse; 
             align-items: center; 
@@ -207,12 +199,12 @@
             padding-bottom: 20px; 
         }
 
-        .biodiversity-text {
+        .titulo1-text {
             flex: 1; 
-            text-align: left; 
+            text-align: justify; 
         }
 
-        .biodiversity-image-right {
+        .titulo1-image-right {
             max-width: 450px; 
             width: 100%; 
             height: auto;
@@ -222,8 +214,8 @@
             flex-shrink: 0; 
         }
 
-        /* Layout para "Rotas e Trilhas" com imagem à esquerda */
-        .routes-container {
+        /* Layout para imagem à esquerda */
+        .titulo2-container {
             display: flex;
             flex-direction: row; 
             align-items: center; 
@@ -233,7 +225,7 @@
             padding-bottom: 20px; 
         }
 
-        .routes-image-left {
+        .titulo2-image-left {
             max-width: 450px; 
             width: 100%; 
             height: auto;
@@ -243,9 +235,9 @@
             flex-shrink: 0;
         }
 
-        .routes-text {
+        .titulo2-text {
             flex: 1;
-            text-align: left; 
+            text-align: justify; 
         }
 
         .module-section p {
@@ -253,17 +245,7 @@
             font-size: 1.05em;
         }
         
-        /* Ajuste para listas dentro do main-content: 
-            Alinha o texto interno à esquerda para melhor leitura */
-        .module-section ul {
-            display: inline-block;
-            text-align: left;
-            list-style-position: inside;
-            padding-left: 0;
-            margin: 0; 
-        }
-        
-        /* Rodapé (Mantido do index.html) */
+        /* Configurações de Rodapé */
         footer {
             background-color: var(--cinza-muito-escuro); 
             color: var(--branco); 
@@ -313,18 +295,14 @@
             text-decoration: none;
         }
 
+        /* RESPONSIVIDADE */
 
-        /* -------------------------------------- */
-        /* RESPONSIVIDADE (Ajustada) */
-        /* -------------------------------------- */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 padding: 15px 20px;
-                /* Removido: align-items: center; - Será aplicado no actions-group, se necessário */
             }
             .header-logo {
-                 /* Garantir que o logo centralize-se primeiro */
                  text-align: center;
                  width: 100%;
             }
@@ -332,12 +310,10 @@
             .actions-group {
                 margin-top: 10px;
                 display: flex;
-                flex-wrap: nowrap; /* Impede a quebra de linha */
-                justify-content: center; /* Centraliza os botões entre si */
+                flex-wrap: nowrap;
+                justify-content: center;
                 gap: 15px;
                 max-width: 100%; 
-                
-                /* NOVO CRUCIAL: Substitui o margin-left: auto do desktop */
                 margin: 10px auto 0 auto; 
             }
             .actions-group a {
@@ -358,38 +334,31 @@
                 max-width: 100%; 
             }
             
-            /* --- 3. CONTEÚDO PRINCIPAL --- */
+            /* CONTEÚDO PRINCIPAL */
 
-            /* Alinhamento de texto para o bloco de conservação */
-            .module-section div[style="text-align: center;"] {
-                text-align: left !important; /* Anula o estilo inline para melhor leitura */
-            }
-            
-            /* Layout para "Biodiversidade em Destaque" no mobile (imagem acima do texto) */
-            .biodiversity-container {
+            .titulo1-container {
                 flex-direction: column; 
                 text-align: center; 
             }
-            .biodiversity-text {
-                text-align: left; /* CORREÇÃO: Alinha o texto à esquerda para facilitar a leitura */
+            .titulo1-text {
+                text-align: justify; 
             }
-            .biodiversity-image-right {
-                max-width: 100%; /* Garante que a imagem ocupe a largura total */
+            .titulo1-image-right {
+                max-width: 100%; 
             }
 
-            /* Layout para "Rotas e Trilhas" no mobile (imagem acima do texto) */
-            .routes-container {
+            .titulo2-container {
                 flex-direction: column; 
                 text-align: center; 
             }
-            .routes-text {
-                text-align: left; /* CORREÇÃO: Alinha o texto à esquerda para facilitar a leitura */
+            .titulo2-text {
+                text-align: justify;
             }
-            .routes-image-left {
-                max-width: 100%; /* Garante que a imagem ocupe a largura total */
+            .titulo2-image-left {
+                max-width: 100%;
             }
             
-            /* --- 4. RODAPÉ --- */
+            /* RODAPÉ  */
             footer {
                 flex-direction: column; 
                 justify-content: center;
@@ -443,9 +412,9 @@
                 </div>
 
                 <div class="module-section">
-                    <div class="biodiversity-container">
-                        <img src="reserva_ecologica/img2.jpg" alt="Exemplo da fauna ou flora do Parque Costa do Sol" class="biodiversity-image-right" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Avifauna'">
-                        <div class="biodiversity-text">
+                    <div class="titulo1-container">
+                        <img src="reserva_ecologica/img2.jpg" alt="Exemplo da fauna ou flora do Parque Costa do Sol" class="titulo1-image-right" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Avifauna'">
+                        <div class="titulo1-text">
                             <h2>A Avifauna da Reserva</h2>
                             <p>Jacarepiá é um verdadeiro santuário para a observação de aves (avifauna), especialmente espécies aquáticas e migratórias. As lagoas, banhados e o mangue fornecem refúgio e alimento em abundância. A preservação desses ambientes é crítica para a manutenção dessas populações. Espécies comuns incluem garças, biguás, socós e a majestosa colhereiro. A diversidade faz da reserva um ponto de interesse fundamental para a ornitologia e ecoturismo de observação.</p>
                         </div>
@@ -453,9 +422,9 @@
                 </div>
 
                 <div class="module-section" style="border-bottom: none;">
-                    <div class="routes-container">
-                        <img src="reserva_ecologica/img3.jpg" alt="Trilha no Parque Costa do Sol" class="routes-image-left" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Acesso+Restrito'">
-                        <div class="routes-text">
+                    <div class="titulo2-container">
+                        <img src="reserva_ecologica/img3.jpg" alt="Trilha no Parque Costa do Sol" class="titulo2-image-left" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?text=Acesso+Restrito'">
+                        <div class="titulo2-text">
                             <p>A Reserva de Jacarepiá, por ser uma área de proteção integral, tem o acesso restrito e focado principalmente em atividades de pesquisa e educação ambiental, devidamente autorizadas pelo órgão gestor. A visitação pública é limitada para proteger o ecossistema sensível do manguezal.</p>
                         </div>
                     </div>

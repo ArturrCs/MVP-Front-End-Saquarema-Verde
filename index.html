@@ -9,22 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* Variáveis CSS para cores */
+        /* Configurações das cores */
         :root {
             --verde-principal: #28a745; 
             --verde-escuro: #1e7e34;
-            --laranja-destaque: #ff7f00; 
-            --laranja-escuro: #cc6600; 
-            --azul-acao: #007bff;
-            --vermelho-restrito: #dc3545;
             --cinza-claro: #f8f9fa;
             --cinza-medio: #e9ecef;
             --branco: #ffffff;
             --texto-principal: #333;
             --cinza-muito-escuro: #212529; 
         }
-
-        /* Estilos globais */
+        /* Configurações de texto */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
@@ -40,21 +35,15 @@
             margin-top: 0;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--azul-acao);
-        }
-
         a:hover {
             text-decoration: underline;
         }
         
-        /* NOVO ESTILO: Garante o mínimo de altura do conteúdo dinâmico */
         main#content-area { 
             min-height: 500px; 
         }
 
-        /* Cabeçalho Fixo */
+        /* Cabeçalho */
         header {
             background-color: var(--branco);
             color: var(--texto-principal);
@@ -79,7 +68,6 @@
             line-height: 0.9;
         }
 
-        /* Estilo para o ícone SVG de folha */
         .header-logo .leaf-icon {
             width: 35px; 
             height: 35px;
@@ -98,7 +86,6 @@
             color: inherit; 
         }
 
-        /* Ações de navegação */
         .actions-group {
             display: flex;
             align-items: center;
@@ -115,14 +102,12 @@
 	            background-color: rgba(40, 167, 69, 0.05); 
 	            border-radius: 4px;
 	            transition: background-color 0.3s ease; 
-	            
-	            /* Ajuste para garantir que todos os botões tenham o mesmo tamanho */
-	            flex: 1 1 120px; /* Garante uma base de 120px e permite crescimento/encolhimento igual */
+	            flex: 1 1 120px; 
 	            text-align: center; 
 	            min-width: 100px; 
-	            display: flex; /* Adiciona flexbox */
-	            align-items: center; /* Centraliza verticalmente */
-	            justify-content: center; /* Centraliza horizontalmente */
+	            display: flex; 
+	            align-items: center;
+	            justify-content: center;
 	        }
 
         .actions-group a:hover {
@@ -130,7 +115,6 @@
             text-decoration: none; 
         }
         
-        /* Estilo para a animação de sublinhado nos links */
         .actions-group a::after {
             content: '';
             position: absolute;
@@ -147,7 +131,7 @@
             left: 0; 
         }
         
-        /* Seção de Destaque (Hero Section) */
+        /* Configuração da primeira imagem de fundo. */
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('index/img1.jpg') no-repeat center center/cover; 
             color: var(--branco);
@@ -160,6 +144,7 @@
             align-items: flex-start; 
         }
 
+        /* Configuração do texto em frente a primeira imagem de fundo. */
         .hero-section h1 {
             color: var(--branco);
             font-family: 'Montserrat', sans-serif; 
@@ -181,7 +166,7 @@
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); 
         }
         
-        /* Estilo para o Botão de Novidades na Hero Section */
+        /* Botão de Novidades na Hero Section */
         .hero-button {
             background-image: url('index/novidades.jpg'); 
             background-size: cover; 
@@ -204,7 +189,6 @@
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); 
         }
 
-        /* Adicionando um overlay para o botão para melhorar a legibilidade do texto sobre a imagem */
         .hero-button::before {
             content: '';
             position: absolute;
@@ -218,18 +202,14 @@
             transition: background 0.4s ease;
         }
 
-        /* O texto do botão agora tem o padding e a borda */
         .hero-button span {
             position: relative;
             z-index: 2;
             color: var(--branco); 
             font-weight: 700; 
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); 
-            
-            /* NOVOS ESTILOS */
             display: inline-block; 
             border: 2px solid rgba(255, 255, 255, 0.6); 
-            
             padding: 18px 35px; 
             border-radius: 50px; 
             transition: border-color 0.4s ease, box-shadow 0.4s ease; 
@@ -247,7 +227,7 @@
             text-decoration: none;
         }
         
-        /* Estilo para o título da seção Destaques */
+        /* Título da seção Destaques */
         .main-title {
             max-width: 1200px;
             margin: 40px auto 10px auto; 
@@ -264,7 +244,7 @@
             text-transform: uppercase;
         }
 
-        /* Seções de Ênfase - Configuração Geral */
+        /* Seções de Destaques - Configuração Geral */
         .container {
             max-width: 1200px;
             margin: 0px auto 40px auto; 
@@ -274,7 +254,7 @@
             gap: 40px;
         }
 
-        /* Estilo Base dos Cards de Ênfase */
+        /* Estilo Base dos Cards de Destaques */
         .emphasis-card {
             background-color: var(--verde-escuro); 
             color: var(--branco);
@@ -293,7 +273,6 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.12);
         }
 
-        /* Elemento ::before para a imagem de fundo e overlay */
         .emphasis-card::before {
             content: '';
             position: absolute;
@@ -312,7 +291,6 @@
              opacity: 0.9; 
         }
 
-        /* Garante que o conteúdo fique por cima da imagem */
         .emphasis-card h2, .emphasis-card p {
             position: relative;
             z-index: 2;
@@ -320,7 +298,6 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5); 
         }
 
-        /* Diminuindo a fonte dos títulos dos cartões */
         .emphasis-card h2 {
             font-size: 1.4em; 
             margin-bottom: 15px;
@@ -361,7 +338,6 @@
             width: 100%; 
         }
 
-        /* Estilo para os botões com imagens */
         .navigation-footer a {
             color: var(--branco);
             font-weight: 700; 
@@ -388,7 +364,6 @@
             min-height: 80px; 
         }
 
-        /* Overlay para escurecer a imagem */
         .navigation-footer a::before {
             content: '';
             position: absolute;
@@ -401,7 +376,6 @@
             transition: background 0.3s ease;
         }
 
-        /* Garante que o texto fique por cima do overlay */
         .navigation-footer a span {
             position: relative;
             z-index: 2;
@@ -431,7 +405,7 @@
             background-image: url('index/img7.jpg');
         }
 
-        /* Rodapé */
+        /* Configurações de Rodapé */
         footer {
             background-color: var(--cinza-muito-escuro); 
             color: var(--branco); 
@@ -439,7 +413,6 @@
             margin-top: 50px;
             font-size: 0.9em;
             display: flex; 
-            /* MUDANÇA AQUI: Centraliza o conteúdo (copyright) */
             justify-content: center; 
             align-items: center;
             position: relative; 
@@ -450,7 +423,7 @@
         footer .footer-content { 
             flex-grow: 1; 
             text-align: center; 
-            max-width: 100%; /* Garante que o conteúdo centralizado use a largura total */
+            max-width: 100%; 
         }
 
         footer p {
@@ -458,7 +431,6 @@
             color: var(--branco); 
         }
         
-        /* Estilo para o botão Área Restrita no Rodapé */
         .footer-admin-button {
             background-color: var(--branco); 
             color: var(--verde-escuro); 
@@ -470,8 +442,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             text-transform: uppercase;
             font-size: 0.8em; 
-            
-            /* NOVAS MUDANÇAS PARA CENTRALIZAÇÃO NO DESKTOP/TABLET */
             position: absolute; 
             right: 40px;
             top: 50%;
@@ -485,14 +455,14 @@
             text-decoration: none;
         }
 
-        /* Responsividade - Comportamento do cabeçalho minimizado */ 
+        /* RESPONSIVIDADE */ 
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 padding: 15px 20px;
             }
             .header-logo {
-                 /* Garantir que o logo centralize-se primeiro */
                  text-align: center;
                  width: 100%;
             }
@@ -500,8 +470,8 @@
             .actions-group {
                 margin-top: 10px;
                 display: flex;
-                flex-wrap: nowrap; /* Impede a quebra de linha */
-                justify-content: center; /* Centraliza os botões entre si */
+                flex-wrap: nowrap; 
+                justify-content: center;
                 gap: 15px;
                 max-width: 100%; 
                 margin: 10px auto 0 auto; 
@@ -524,7 +494,7 @@
                 max-width: 100%; 
             }
 
-            /* RODAPÉ RESPONSIVO (mobile) */
+            /* RODAPÉ */
             footer {
                 flex-direction: column; 
                 justify-content: center;
@@ -567,12 +537,12 @@
             <p>Conecte-se com a natureza através de trilhas, cachoeiras e a rica biodiversidade do Circuito Saquarema Verde.</p>
             
             <a href="eventos.html" class="hero-button">
-                <span>Fique por dentro das novdades!!!</span>
+                <span>Fique por dentro das novidades!!!</span>
             </a>
         </div>
 
         <div class="main-title">
-            <h2>Áreas de destaque:</h2>
+            <h2>Em destaque:</h2>
         </div>
 
         <div class="container">
@@ -606,8 +576,6 @@
         <div class="footer-content">
             <p>&copy; 2025 Circuito Saquarema Verde. Todos os direitos reservados.</p>
         </div>
-        
-        <!-- O espaçador com 'width: 100px;' foi removido para que o conteúdo possa ser centralizado com o novo CSS -->
     </footer>
     
 </body>
