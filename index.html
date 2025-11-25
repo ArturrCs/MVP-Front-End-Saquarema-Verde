@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuito Saquarema Verde - Início</title>
+    <title>Circuito Saquarema Verde</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -94,7 +94,7 @@
             max-width: 50%; 
         }
         
-.actions-group a { 
+        .actions-group a { 
 	            color: var(--texto-principal);
 	            font-weight: 600;
 	            padding: 8px 12px; 
@@ -133,7 +133,7 @@
         
         /* Configuração da primeira imagem de fundo. */
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('index/img1.jpg') no-repeat center center/cover; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('index/img1.jpg') no-repeat center center/cover; 
             color: var(--branco);
             text-align: left; 
             padding: 33px 40px; 
@@ -142,6 +142,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start; 
+            position: relative;
         }
 
         /* Configuração do texto em frente a primeira imagem de fundo. */
@@ -175,7 +176,7 @@
             color: var(--branco); 
             border: none; 
             padding: 0; 
-            border-radius: 50px; 
+            border-radius: 20px; 
             font-size: 1.25em; 
             font-weight: 700;
             text-transform: uppercase;
@@ -183,7 +184,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
             transition: all 0.4s ease; 
             display: inline-block; 
-            margin-left: 0; 
+            margin-left: 140px; 
             position: relative; 
             overflow: hidden; 
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); 
@@ -197,7 +198,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.4); 
-            border-radius: 50px; 
+            border-radius: 20px; 
             z-index: 1;
             transition: background 0.4s ease;
         }
@@ -211,7 +212,7 @@
             display: inline-block; 
             border: 2px solid rgba(255, 255, 255, 0.6); 
             padding: 18px 35px; 
-            border-radius: 50px; 
+            border-radius: 20px; 
             transition: border-color 0.4s ease, box-shadow 0.4s ease; 
         }
 
@@ -405,6 +406,21 @@
             background-image: url('index/img7.jpg');
         }
 
+                                  /*Configuração de créditos da foto */
+        .hero-caption {
+            position: absolute;
+            bottom: 15px;
+            right: 40px;   /* Posição Left ou right */
+            color: #ffffffcc; /* Branco 80% */
+            font-size: 0.9em;
+            font-style: italic;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        } 
+
+        .page-hero {
+            position: relative;
+        }
+
         /* Configurações de Rodapé */
         footer {
             background-color: var(--cinza-muito-escuro); 
@@ -539,6 +555,8 @@
             <a href="eventos.html" class="hero-button">
                 <span>Fique por dentro das novidades!!!</span>
             </a>
+
+            <div class="hero-caption">Foto: Vista Aérea de Saquarema</div>
         </div>
 
         <div class="main-title">
