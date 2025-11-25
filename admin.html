@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN - Circuito Saquarema Verde</title>
+    <title>Login - Circuito Saquarema Verde</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -123,9 +123,8 @@
         
         /* Seção Principal */
         .main-content {
-            flex-grow: 1; 
             max-width: 500px;
-            margin: 80px auto;
+            margin: 80px auto 40px;
             padding: 40px;
             background-color: var(--branco);
             border-radius: 10px;
@@ -210,33 +209,38 @@
             <span>Circuito Saquarema Verde</span>
         </a>
         
-        <div class="actions-group">
-            <a href="index.html">Início</a>
-        </div>
+        
     </header>
 
     <div class="main-content">
-        <h1>LOGIN</h1>
-
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="username">Usuário (E-mail):</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            
-            <button type="submit" class="login-button">
-                Entrar
-            </button>
-        </form>
-
-        <p style="margin-top: 30px; font-size: 0.9em;">
-            <a href="#" style="color: var(--vermelho-restrito);">Esqueceu sua senha?</a>
-        </p>
+  <h1>LOGIN</h1>
+  <form id="loginForm" onsubmit="return false;">
+    <div class="form-group">
+      <label for="user">Usuário:</label>
+      <input id="user" type="text" autocomplete="username" required />
     </div>
+    <div class="form-group">
+      <label for="pass">Senha:</label>
+      <input id="pass" type="password" autocomplete="current-password" required />
+    </div>
+    <button id="btnLogin" class="login-button">Entrar</button>
+  </form>
+</div>
 
+<script>
+const defaultUser = { user: 'admin', pass: 'saquarema' };
+const btn = document.getElementById('btnLogin');
+btn.addEventListener('click', () => {
+  const u = document.getElementById('user').value.trim();
+  const p = document.getElementById('pass').value.trim();
+  if(u === defaultUser.user && p === defaultUser.pass){
+    localStorage.setItem('auth','true');
+    // redirect to admin dashboard
+    window.location.href = 'eventos-admin.html';
+  } else {
+    alert('Usuário ou senha incorretos.');
+  }
+});
+</script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>    
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuito Saquarema Verde - Eventos</title>
+    <title>Eventos - Circuito Verde Saquarema</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -28,6 +28,19 @@
             color: var(--texto-principal);
             line-height: 1.6;
         }
+
+        html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
@@ -133,7 +146,7 @@
 
         /* Configuração da primeira imagem de fundo. */
         .page-hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('eventos/img1.jpg') no-repeat center 65% / cover;  
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('eventos/img1.jpg') no-repeat center 65% / cover;  
             color: var(--branco);
             text-align: left; 
             padding: 80px 40px; 
@@ -208,6 +221,22 @@
             margin-top: 20px;
         }
                                   /* Termina aqui os cards novos */
+                                  
+                                  /*Configuração de créditos da foto */
+        .hero-caption {
+            position: absolute;
+            bottom: 15px;
+            right: 40px;   /* Posição Left ou right */
+            color: #ffffffcc; /* Branco 80% */
+            font-size: 0.9em;
+            font-style: italic;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        } 
+
+        .page-hero {
+            position: relative;
+        }
+                         
 
         /* Configurações de Rodapé */
         footer {
@@ -337,34 +366,13 @@
 
     <div class="page-hero">
         <h1>Não perca nenhum evento! </h1>
+        <p class="hero-caption">Foto: WSL Brasil - Praia de Itaúna</p>
     </div>
     
-    <main id="content-area">
-
-        <div class="content-container">
-            
-            <section class="main-content">
-
-    <!-- EVENTO 1 -->
-    <div class="event-block">
-        <img src="eventos/img2.jpg" class="event-banner">
-        <div class="event-card">
-            <h2>WSL BRASIL</h2>
-            <p>O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo. O WSL BRASIL é o evento mais famoso do mundoooo.</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.3193697847805!2d-42.4630061!3d-22.8646578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9767430cb7ea55%3A0xda3a310a813ed48c!2sAcesso%20a%20Trilha%20dos%20Goonies!5e0!3m2!1spt-BR!2sbr!4v1763905347282!5m2!1spt-BR!2sbr"></iframe>
-        </div>
-    </div>
-
-    <!-- EVENTO 2 -->
-    <div class="event-block">
-        <img src="eventos/img3.jpg" class="event-banner">
-        <div class="event-card">
-            <h2>Praia de Itaúna</h2>
-            <p>A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...A praia de Itaúna é a mais famosa de Saquarema...</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d546.2025637362852!2d-42.49010211682016!3d-22.935556822757217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x975e92f14f1bc7%3A0x772897d78ef69581!2sR.%20Praia%20Figueira%20-%20Ita%C3%BAna%2C%20Saquarema%20-%20RJ%2C%2028990-000!5e0!3m2!1spt-BR!2sbr"></iframe>
-        </div>
-    </div>
-    
+    <main>
+      <div class="container" id="eventosContainer">
+    <!-- Eventos serão injetados aqui -->
+      </div>
     </main>
 
     <footer>
@@ -374,6 +382,39 @@
             <p>&copy; 2025 Circuito Saquarema Verde. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+function escapeHtml(s){ if(!s) return ''; return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;').replaceAll('\n','<br>'); }
+
+function carregarEventos(){
+  const container = document.getElementById('eventosContainer');
+  const eventos = JSON.parse(localStorage.getItem('eventos')||'[]');
+  container.innerHTML = '';
+  if(!eventos.length){
+    container.innerHTML = '<p style="text-align:center;color:#555;padding:36px;background:#fff;border-radius:8px">Nenhum evento disponível no momento.</p>';
+    return;
+  }
+  eventos.forEach(ev=>{
+    const bloco = document.createElement('div');
+    bloco.className = 'event-block';
+    // extrair mapa e urlExterna para compatibilidade
+    const mapa = ev.mapa || '';
+    const urlExterna = ev.urlExterna || '';
+    bloco.innerHTML = `
+      <img src="${ev.imagem}" class="event-banner" onerror="this.style.display='none'">
+      <div class="event-card">
+        <h2>${escapeHtml(ev.titulo)}</h2>
+        <p>${escapeHtml(ev.descricao)}</p>
+        ${mapa ? `<iframe src="${mapa}" loading="lazy"></iframe>` : ''}
+        ${(!mapa && urlExterna) ? `<p><a href="${urlExterna}" target="_blank" rel="noopener">Abrir local em nova aba</a></p>` : ''}
+      </div>
+    `;
+    container.appendChild(bloco);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', carregarEventos);
+</script>
     
 </body>
 </html>
