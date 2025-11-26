@@ -246,6 +246,89 @@
             font-size: 1.05em;
         }
 
+        /* CLASSE  PARA O CARROSSEL */
+        .carousel-wrapper {
+            max-width: 450px; 
+            width: 100%; 
+            height: 500px; /* Altura fixa do contêiner */
+            flex-shrink: 0; 
+            position: relative; /* Para posicionar os botões */
+        }
+
+        .image-carousel-container {
+            width: 100%; 
+            height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Habilita a rolagem horizontal */
+            white-space: nowrap; /* Impede que as imagens quebrem a linha */
+            scroll-snap-type: x mandatory; /* Para um efeito de "snap" ao rolar */
+            scroll-behavior: smooth; /* Para rolagem suave com JS */
+        }
+
+        .image-carousel-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .image-carousel-container::-webkit-scrollbar-thumb {
+            background-color: var(--cinza-claro);
+            border-radius: 4px;
+        }
+
+        .image-carousel-container::-webkit-scrollbar-track {
+            background-color: var(--cinza-medio);
+            border-radius: 4px;
+        }
+
+        .image-carousel-item {
+            display: inline-block; /* Permite que os itens fiquem lado a lado */
+            width: 100%; /* Cada item ocupa 100% da largura do contêiner visível */
+            height: 100%;
+            scroll-snap-align: start; /* Para o efeito de "snap" */
+        }
+
+        .image-carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px; /* Mantém o border-radius no item */
+        }
+
+        /* Botões de Navegação */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--branco);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5em;
+            line-height: 1;
+            transition: background 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .carousel-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 1;
+        }
+
+        .carousel-button.prev {
+            left: 0;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .carousel-button.next {
+            right: 0;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+        /* FIM CLASSE MODIFICADA PARA O CARROSSEL */
+
         /* Rodapé (Mantido do index.html) */
         footer {
             background-color: var(--cinza-muito-escuro); 
@@ -439,7 +522,24 @@
 
                 <div class="module-section">
                     <div class="titulo1-container">
-                        <img src="cachoeiras/img2.jpg" class="titulo1-image-right" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?'">
+                        <div class="carousel-wrapper">
+                            <div class="image-carousel-container" id="carousel-1">
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img2.jpg" alt="Imagem 2 - Cachoeira do Roncador" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img2'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img2_extra1.jpg" alt="Imagem 2 Extra 1 - Cachoeira do Roncador" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img2+Extra+1'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img2_extra2.jpg" alt="Imagem 2 Extra 2 - Cachoeira do Roncador" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img2+Extra+2'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img2_extra3.jpg" alt="Imagem 2 Extra 2 - Cachoeira do Roncador" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img2+Extra+2'">
+                                </div>
+                            </div>
+                            <button class="carousel-button prev" onclick="scrollCarousel('carousel-1', -1)">&#10094;</button>
+                            <button class="carousel-button next" onclick="scrollCarousel('carousel-1', 1)">&#10095;</button>
+                        </div>
                         <div class="titulo1-text">
                             <h2>Cachoeira do Roncador</h2>
                             <p>Localizada na Serra do Roncador, a cachoeira do Roncador é um dos tesouros naturais menos conhecidos da Região dos Lagos, oferecendo um contraste refrescante com as famosas praias da cidade. Destino perfeito em Saquarema para aliviar o calor e conectar-se com a natureza, longe do movimento da orla.</p>
@@ -460,7 +560,21 @@
 
                 <div class="module-section">
                     <div class="titulo2-container">
-                        <img src="cachoeiras/img3.jpg" class="titulo2-image-left" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?'">
+                        <div class="carousel-wrapper">
+                            <div class="image-carousel-container" id="carousel-2">
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img3.jpg" alt="Imagem 3 - Cachoeira do Tinguí" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img3'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img3_extra1.jpg" alt="Imagem 3 Extra 1 - Cachoeira do Tinguí" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img3+Extra+1'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img3_extra2.jpg" alt="Imagem 3 Extra 2 - Cachoeira do Tinguí" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img3+Extra+2'">
+                                </div>
+                            </div>
+                            <button class="carousel-button prev" onclick="scrollCarousel('carousel-2', -1)">&#10094;</button>
+                            <button class="carousel-button next" onclick="scrollCarousel('carousel-2', 1)">&#10095;</button>
+                        </div>
                         <div class="titulo2-text">
                             <h2>Cachoeira do Tinguí</h2>
                             <p>Um verdadeiro refúgio verde, escondido nas encostas da Serra do Tinguí, na divisa entre os municípios de Saquarema e Rio Bonito. Embora o nome seja Tinguí, muitas vezes é referenciada como uma das mais belas quedas d'água da região serrana de Saquarema. Sua localização remota e o acesso por trilhas bem marcadas garantem uma experiência de imersão completa na Mata Atlântica.</p>
@@ -479,15 +593,67 @@
                     </div>
                 </div>
 
-                <div class="module-section" style="border-bottom: none;">
+                <div class="module-section">
                     <div class="titulo1-container">
-                        <img src="cachoeiras/img4.jpg" class="titulo1-image-right" onerror="this.onerror=null; this.src='https://placehold.co/450x450/28a745/ffffff?'">
+                        <div class="carousel-wrapper">
+                            <div class="image-carousel-container" id="carousel-3">
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img4.jpg" alt="Imagem 4 - Cachoeira Represa do Rio Seco" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img4'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img4_extra1.jpg" alt="Imagem 4 Extra 1 - Cachoeira Represa do Rio Seco" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img4+Extra+1'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img4_extra2.jpg" alt="Imagem 4 Extra 2 - Cachoeira Represa do Rio Seco" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img4+Extra+2'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img4_extra3.jpg" alt="Imagem 2 Extra 2 - Cachoeira Represa do Rio Seco" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img2+Extra+2'">
+                                </div>
+                            </div>
+                            <button class="carousel-button prev" onclick="scrollCarousel('carousel-3', -1)">&#10094;</button>
+                            <button class="carousel-button next" onclick="scrollCarousel('carousel-3', 1)">&#10095;</button>
+                        </div>
                         <div class="titulo1-text">
                             <h2>Cachoeira Represa do Rio Seco</h2>
                             <p>Um local que combina a beleza natural da queda d'água com um importante marco histórico e de engenharia local: a antiga represa. Localizada na área de serra de Saquarema, em uma região de acesso controlado e preservado, ela oferece um ambiente único para o ecoturismo.</p>
                             <div style="margin-top: 20px;">
                                 <iframe 
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.0848064550937!2d-42.493053599999996!3d-22.836351699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x976166676fa369%3A0x239468065a971482!2sCachoeira%20Represa%20do%20Rio%20Seco!5e0!3m2!1spt-BR!2sbr"
+                                    width="450"
+                                    height="150"
+                                    style="border:0; border-radius: 10px;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+
+               <div class="module-section" style="border-bottom: none;">
+                    <div class="titulo2-container">
+                        <div class="carousel-wrapper">
+                            <div class="image-carousel-container" id="carousel-4">
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img5.jpg" alt="Imagem 5 - Cachoeira Véu da Noiva" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img3'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img5_extra1.jpg" alt="Imagem 5 Extra 1 - Cachoeira Véu da Noiva" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img3+Extra+1'">
+                                </div>
+                                <div class="image-carousel-item">
+                                    <img src="cachoeiras/img5_extra2.jpg" alt="Imagem 5 Extra 2 - Cachoeira Véu da Noiva" onerror="this.onerror=null; this.src='https://placehold.co/450x500/28a745/ffffff?text=img3+Extra+2'">
+                                </div>
+                            </div>
+                            <button class="carousel-button prev" onclick="scrollCarousel('carousel-4', -1)">&#10094;</button>
+                            <button class="carousel-button next" onclick="scrollCarousel('carousel-4', 1)">&#10095;</button>
+                        </div>
+                        <div class="titulo2-text">
+                            <h2>Cachoeira Véu da Noiva</h2>
+                            <p>Uma das Cachoeiras mais visitadas de Saquarema, fica localizada em um dos acessos pela Serra do Roncador. O acesso é através de uma trilha considerada fácil. Para quem gosta de contato com a natureza, é um ótimo lugar para conhecer. </p>
+                            <div style="margin-top: 20px;">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.0694705014257!2d-42.634581088243515!3d-22.871325286997518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99e704357a030b%3A0x240ab001f6b58136!2sS%C3%8DTIO%20GRATID%C3%83O%20AO%20PAI%20-%20CACHOEIRA%20V%C3%89U%20DA%20NOIVA%20-%20PROPRIEDADE%20PARTICULAR!5e0!3m2!1spt-BR!2sbr!4v1764158270899!5m2!1spt-BR!2sbr"
                                     width="450"
                                     height="150"
                                     style="border:0; border-radius: 10px;"
@@ -513,6 +679,26 @@
             <p>&copy; 2025 Circuito Saquarema Verde. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        function scrollCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+
+            // Calcula a largura de um item (que é a largura total do contêiner)
+            const itemWidth = carousel.offsetWidth;
+            
+            // Calcula a nova posição de rolagem
+            // direction = 1 (próximo item), direction = -1 (item anterior)
+            const newScrollLeft = carousel.scrollLeft + (direction * itemWidth);
+
+            // Rola para a nova posição
+            carousel.scrollTo({
+                left: newScrollLeft,
+                behavior: 'smooth'
+            });
+        }
+    </script>
     
 </body>
 </html>

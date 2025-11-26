@@ -56,7 +56,7 @@
         header {
             background-color: var(--branco);
             color: var(--texto-principal);
-            padding: 19px 40px;
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -124,7 +124,7 @@
         .container{max-width:1200px;margin:28px auto;padding:22px;background:var(--white);border-radius:12px;box-shadow:0 6px 22px rgba(0,0,0,0.06)}
         .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
         .logout {
-          padding: 10px 14px;           
+          padding: 10px 20px;           
           font-weight: 600;            
           border-radius: 4px;          
           background-color: #c82333; 
@@ -165,7 +165,6 @@
         .event-card p{margin:8px 0;color:#333;font-size:0.95rem}
         .card-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
 
-        .footer{margin-top:28px;padding:16px 0;text-align:center;background:var(--verde-esc);color:#fff;border-radius:6px}
     </style>
 </head>
 <body>
@@ -173,7 +172,7 @@
 <header>
         <a href="index.html" class="header-logo">
             <svg class="leaf-icon" viewBox="0 0 24 24">
-                <path d="M17 8c-1.66-1.66-4.66-2.02-7-.75C8.34 8.79 7 11.5 7 14c0 3 2 6 6 6s6-3 6-6c0-2.5-1.34-5.21-3-7zM8 12c.5-1.5 1.5-2.5 3-3 .75-.38 1.5-.75 2.25-1.13.75-.38 1.5-.75 2.25-1.13.75-.38 1.5-.75 2.25-1.13C16 4 14 2 12 2S8 4 8 8c0 2.5 1.34-5.21 3 7 .75.38 1.5.75 2.25 1.13.75.38 1.5.75 2.25 1.13C16 20 14 22 12 22S8 20 8 16c0-2.5 1.34-5.21 3-7z" fill="currentColor"/>
+                <path d="M17 8c-1.66-1.66-4.66-2.02-7-.75C8.34 8.79 7 11.5 7 14c0 3 2 6 6 6s6-3 6-6c0-2.5-1.34-5.21-3-7zM8 12c.5-1.5 1.5-2.5 3-3 .75-.38 1.5-.75 2.25-1.13.75.38 1.5.75 2.25-1.13C16 4 14 2 12 2S8 4 8 8c0 2.5 1.34-5.21 3 7 .75.38 1.5.75 2.25 1.13.75.38 1.5.75 2.25 1.13C16 20 14 22 12 22S8 20 8 16c0-2.5 1.34-5.21 3-7z" fill="currentColor"/>
             </svg>
             <span>Circuito Saquarema Verde</span>
         </a>
@@ -211,11 +210,14 @@
     </div>
 
     <div class="card">
-      <label>Preview do Local:</label>
+      <label>Prévia do Local:</label>
       <iframe id="iframePreview" class="iframe-preview"></iframe>
-      <div style="margin-top:14px;font-weight:700;color:var(--verde-esc)">Instruções rápidas:</div>
+      <div style="margin-top:14px;font-weight:700;color:var(--verde-esc)">Como pegar o link do local:</div>
       <p style="margin:8px 0 0 16px;color:#555">
-      <p>Localizar o local do evento no Google Maps, clicar em "compartilhar", depois em "Incorporar um mapa", e "COPIAR LINK".</p>
+      <p>1º. Localizar o local do evento no Google Maps;</p>
+      <p>2º. Clicar em "compartilhar";</p>
+      <p>3º. Clicar na guia "Incorporar um mapa";</p>
+      <p>4º. Clicar em "COPIAR LINK".</p>
     </div>
   </div>
 

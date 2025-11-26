@@ -11,7 +11,7 @@
     <style>
         /* Variáveis CSS para cores */
         :root {
-            --verde-principal: #28a745; /* Verde do Circuito */
+            --verde-principal: #28a745;
             --verde-escuro: #1e7e34;
             --azul-acao: #007bff;
             --vermelho-restrito: #dc3545;
@@ -30,11 +30,21 @@
             background-color: var(--cinza-claro);
             color: var(--texto-principal);
             line-height: 1.6;
-            min-height: 100vh; 
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
             display: flex;
             flex-direction: column;
         }
 
+        main {
+            flex: 1;
+        }
+        
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
             color: var(--verde-escuro);
@@ -50,9 +60,8 @@
             text-decoration: underline;
         }
 
-        /* ====================================================
-        CABEÇALHO
-        ==================================================== */
+        /* Cabeçalho */
+
         header {
             background-color: var(--branco);
             color: var(--texto-principal);
@@ -118,7 +127,6 @@
             text-decoration: none; 
         }
         /* Fim Cabeçalho */
-        /* ==================================================== */
 
         
         /* Seção Principal */
@@ -133,9 +141,9 @@
         }
 
         .main-content h1 {
-            color: var(--verde-escuro); /* Trocando para o verde escuro para dar mais foco no título */
+            color: var(--verde-escuro); 
             margin-bottom: 30px;
-            font-size: 2.2em; /* Deixando o título LOGIN maior */
+            font-size: 2.2em; 
             text-transform: uppercase;
         }
 
@@ -180,21 +188,43 @@
             background-color: var(--verde-escuro);
         }
 
-        /* Responsividade básica */
+        /* RESPONSIVIDADE */
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 padding: 15px 20px;
             }
-            /* Ações de navegação em mobile */
+            .header-logo {
+                 text-align: center;
+                 width: 100%;
+            }
+
             .actions-group {
                 margin-top: 10px;
+                display: flex;
+                flex-wrap: nowrap;
                 justify-content: center;
                 gap: 15px;
+                max-width: 100%; 
+                margin: 10px auto 0 auto; 
             }
-            .main-content {
-                margin: 40px 20px;
-                padding: 30px;
+            .actions-group a {
+                font-size: 0.9em; 
+                flex: 0 0 auto; 
+                min-width: unset; 
+            }
+
+            .hero-section {
+                padding: 30px 20px; 
+                min-height: 280px; 
+                align-items: flex-start; 
+                text-align: left; 
+            }
+            .hero-section h1 {
+                margin-left: 0; 
+                font-size: 2.5em; 
+                max-width: 100%; 
             }
         }
     </style>
@@ -204,12 +234,14 @@
     <header>
         <a href="index.html" class="header-logo">
             <svg class="leaf-icon" viewBox="0 0 24 24">
-                <path d="M17 8c-1.66-1.66-4.66-2.02-7-.75C8.34 8.79 7 11.5 7 14c0 3 2 6 6 6s6-3 6-6c0-2.5-1.34-5.21-3-7zM8 12c.5-1.5 1.5-2.5 3-3 .75-.38 1.5-.75 2.25-1.13.75-.38 1.5-.75 2.25-1.13.75-.38 1.5-.75 2.25-1.13C16 4 14 2 12 2S8 4 8 8c0 2.5 1.34-5.21 3 7 .75.38 1.5.75 2.25 1.13.75.38 1.5.75 2.25 1.13C16 20 14 22 12 22S8 20 8 16c0-2.5 1.34-5.21 3-7z" fill="currentColor"/>
+                <path d="M17 8c-1.66-1.66-4.66-2.02-7-.75C8.34 8.79 7 11.5 7 14c0 3 2 6 6 6s6-3 6-6c0-2.5-1.34-5.21-3-7zM8 12c.5-1.5 1.5-2.5 3-3 .75-.38 1.5-.75 2.25-1.13.75.38 1.5.75 2.25-1.13C16 4 14 2 12 2S8 4 8 8c0 2.5 1.34-5.21 3 7 .75.38 1.5.75 2.25 1.13.75.38 1.5.75 2.25 1.13C16 20 14 22 12 22S8 20 8 16c0-2.5 1.34-5.21 3-7z" fill="currentColor"/>
             </svg>
             <span>Circuito Saquarema Verde</span>
         </a>
         
-        
+        <div class="actions-group">
+            <a href="index.html">Início</a>
+        </div>
     </header>
 
     <div class="main-content">
