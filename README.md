@@ -15,9 +15,9 @@
   2- Procure o arquivo index.html, dê um duplo clique no arquivo ou abra-o pelo navegador de sua preferência (Chrome, Edge, Firefox, etc.).
   3- Ao abrir, a página inicial será exibida com as principais opções de navegação: Trilhas, Cachoeiras, Eventos e pontos em destaque.
 ## INFORMAÇÕES ADICIONAIS
-  - A PLATAFORMA VISA CENTRALIZAR INFORMAÇÕES PÚBLICAS SOBRE ECOTURISMO E EDUCAÇÃO AMBIENTAL.
+  - Foram criados 3 protótipos, mvp_1, mvp_2 e mvp_3.
 ## MVP DEFINIDO 
-  - MVP 3 - MAPA INTERATIVO COM PONTOS TURÍSTICOS.
+  - MVP_3 - MAPA INTERATIVO COM PONTOS TURÍSTICOS.
 ## OBJETIVOS E BENEFÍCIOS DO PRODUTO
   - OBJETIVO: FORNECER INFORMAÇÕES SOBRE TRILHAS E PONTOS DE ECOTURISMO EM SAQUAREMA.
   - BENEFÍCIO: PROMOVER O ECOTURISMO E A EDUCAÇÃO AMBIENTAL.
@@ -27,6 +27,7 @@
  ## DORES DO PÚBLICO ALVO
   - FALTA DE INFORMAÇÃO SOBRE LOCALIZAÇÃO DE TRILHAS
   - DIFICULDADE EM ENCONTRAR INFORMAÇÕES SOBRE ECOTURISMO
+
 
 
 
