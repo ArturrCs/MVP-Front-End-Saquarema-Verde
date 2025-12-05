@@ -11,9 +11,9 @@
   - JAVASCRIPT
     Aplicado para adicionar interatividade e dinamismo ao site, como navegação entre páginas, controle de exibição de elementos, validação de campos e funcionamento da área restrita (dashboard e autenticação).    
 ## EXECUTANDO O MVP
-1. ABRA O ARQUIVO HTML NO NAVEGADOR.
-2. EXPLORE O MAPA INTERATIVO COM PONTOS DE ECOTURISMO.
-3. CLIQUE NOS PONTOS PARA OBTER MAIS INFORMAÇÕES.
+1- Localize a pasta do projeto em seu computador.
+2- Procure o arquivo index.html, dê um duplo clique no arquivo ou abra-o pelo navegador de sua preferência (Chrome, Edge, Firefox, etc.).
+3- Ao abrir, a página inicial será exibida com as principais opções de navegação: Trilhas, Cachoeiras, Eventos e pontos em destaque.
 ## INFORMAÇÕES ADICIONAIS
 A PLATAFORMA VISA CENTRALIZAR INFORMAÇÕES PÚBLICAS SOBRE ECOTURISMO E EDUCAÇÃO AMBIENTAL.
 ## MVP DEFINIDO 
@@ -28,6 +28,7 @@ MVP 1 - MAPA INTERATIVO COM PONTOS DE ECOTURISMO
  ## DORES DO PÚBLICO ALVO
   - FALTA DE INFORMAÇÃO SOBRE LOCALIZAÇÃO DE TRILHAS
   - DIFICULDADE EM ENCONTRAR INFORMAÇÕES SOBRE ECOTURISMO
+
 
 
 
