@@ -5,8 +5,11 @@
   - FALTA DE INFORMAÇÕES SOBRE LOCALIZAÇÃO DE TRILHAS E PONTOS DE ECOTURISMO EM SAQUAREMA
 ## TECNOLOGIAS UTILIZADAS
   - HTML5
+    Utilizado para estruturar todas as páginas do site, definindo a organização dos elementos como cabeçalho, botões, seções, textos e rodapé.    
   - CSS3
+    Responsável pela estilização e aparência visual do sistema, incluindo cores, tamanhos, espaçamentos, disposição dos botões, responsividade e layout geral das páginas.    
   - JAVASCRIPT
+    Aplicado para adicionar interatividade e dinamismo ao site, como navegação entre páginas, controle de exibição de elementos, validação de campos e funcionamento da área restrita (dashboard e autenticação).    
 ## EXECUTANDO O MVP
 1. ABRA O ARQUIVO HTML NO NAVEGADOR.
 2. EXPLORE O MAPA INTERATIVO COM PONTOS DE ECOTURISMO.
@@ -25,6 +28,7 @@ MVP 1 - MAPA INTERATIVO COM PONTOS DE ECOTURISMO
  ## DORES DO PÚBLICO ALVO
   - FALTA DE INFORMAÇÃO SOBRE LOCALIZAÇÃO DE TRILHAS
   - DIFICULDADE EM ENCONTRAR INFORMAÇÕES SOBRE ECOTURISMO
+
 
 
 
